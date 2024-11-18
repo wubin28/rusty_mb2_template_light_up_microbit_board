@@ -2,7 +2,7 @@
 
 ## How to generate a new project
 ```
-cargo generate wubin28/rusty_mb2_template
+cargo generate wubin28/rusty_mb2_template_light_up_microbit_board
 ```
 
 ## How to run the code

@@ -26,8 +26,17 @@ cargo generate wubin28/rusty_mb2_template_light_up_microbit_board
 
 ## How to run the code
 
-### On Ubuntu and macOS:
+Before cross-compiling you have to download a pre-compiled version of the standard library (a reduced version of it, actually) for your target:
+
 ```
+rustup target add thumbv7em-none-eabihf
+cargo build
+```
+
+### On Ubuntu and macOS:
+
+```
+cargo build
 cargo run
 ```
 

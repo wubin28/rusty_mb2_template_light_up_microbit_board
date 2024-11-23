@@ -1,6 +1,25 @@
 # An embedded Rust project template for the micro:bit v2
 
 ## How to generate a new project
+
+Install cargo-generate:
+
+```
+cargo install cargo-generate
+```
+
+If you see the error: "failed to run custom build command for openssl-sys v0.9.104" when installing cargo-generate on Ubuntu, please run the following commands to install openssl dev library:
+
+```
+sudo apt update
+sudo apt install libssl-dev pkg-config
+# verify the installation
+pkg-config --modversion openssl
+# should see something like 3.0.2
+```
+
+Then generate a new project:
+
 ```
 cargo generate wubin28/rusty_mb2_template_light_up_microbit_board
 ```

@@ -30,19 +30,28 @@ Then generate a new project:
 cargo generate wubin28/rusty_mb2_template_light_up_microbit_board
 ```
 
-## How to run the code
+## How to build the code
 
 Before cross-compiling you have to download a pre-compiled version of the standard library (a reduced version of it, actually) for your target:
 
 ```
 rustup target add thumbv7em-none-eabihf
+rustup target list --installed
 cargo build
 ```
+## How to run the code
 
-Install the embedded toolkit [probe-rs](https://probe.rs/):
+
+Install the [probe-rs](https://probe.rs/docs/getting-started/installation/) tools:
+
 
 ```
-curl --proto '=https' --tlsv1.2 -LsSf https://github.com/probe-rs/probe-rs/releases/latest/download/probe-rs-tools-installer.sh | sh
+# For Linux or Windows
+cargo install cargo-binstall
+cargo binstall probe-rs-tools
+
+# For macOS
+brew tap probe-rs/probe-rs
 ```
 
 ### On Ubuntu and macOS:
@@ -53,7 +62,7 @@ cargo run
 
 ### On Windows 11:
 ```
-cargo run --probe <VID:PID:SN>
+cargo run -- --probe <VID:PID:SN>
 ```
 
 ## How to debug the code on Ubuntu
